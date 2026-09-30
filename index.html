@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b45">
+  <title>CecyCafetería Escolar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <section class="pantalla pantalla-login activa" id="pantallaLogin" aria-labelledby="tituloLogin">
+    <div class="login-card">
+      <div class="marca-icono" aria-hidden="true">☕</div>
+      <p class="sobrelinea">SERVICIO ESCOLAR</p>
+      <h1 id="tituloLogin">CecyCafetería</h1>
+      <p class="texto-suave">Inicia sesión para pedir algo rico en tu próximo recreo.</p>
+      <form id="formLogin">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="alumno@cecytem.edu.mx" autocomplete="username" required>
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Tu contraseña" autocomplete="current-password" required>
+        <button class="boton boton-principal boton-ancho" type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="nota-login">Demo escolar: puedes entrar con cualquier correo válido y una contraseña.</p>
+    </div>
+  </section>
+
+  <section class="pantalla" id="pantallaInicio" aria-labelledby="tituloInicio">
+    <header class="hero">
+      <div class="hero-contenido">
+        <span class="insignia">☀️ Hecho para tu recreo</span>
+        <h1 id="tituloInicio">¡Hola! Bienvenido a<br><span>CecyCafetería Escolar</span></h1>
+        <p>Tu pausa favorita empieza aquí. ¿Qué se te antoja hoy?</p>
+      </div>
+      <div class="hero-ilustracion" aria-hidden="true">🥪</div>
+    </header>
+    <main class="contenedor">
+      <div class="seccion-titulo">
+        <div><p class="sobrelinea">TU ESPACIO</p><h2>¿Qué quieres hacer?</h2></div>
+      </div>
+      <div class="opciones">
+        <button class="opcion opcion-destacada" type="button" data-screen="pantallaMenu">
+          <span class="opcion-icono">🍔</span><span><strong>Ir al menú</strong><small>Explora lo que preparamos</small></span><span class="flecha">→</span>
+        </button>
+        <button class="opcion" type="button" data-screen="pantallaPedido">
+          <span class="opcion-icono">🛒</span><span><strong>Mi pedido</strong><small><span id="contadorInicio">0</span> productos en tu carrito</small></span><span class="flecha">→</span>
+        </button>
+        <button class="opcion" type="button" data-screen="pantallaPedidos" data-orders="recent">
+          <span class="opcion-icono">📋</span><span><strong>Mis pedidos</strong><small>Consulta tus pedidos recientes</small></span><span class="flecha">→</span>
+        </button>
+        <button class="opcion" type="button" data-screen="pantallaHistorial" data-orders="all">
+          <span class="opcion-icono">🧾</span><span><strong>Historial</strong><small>Revisa tus compras anteriores</small></span><span class="flecha">→</span>
+        </button>
+      </div>
+      <button class="boton boton-texto boton-salir" type="button" data-action="logout">↪ Cerrar sesión</button>
+    </main>
+  </section>
+
+  <section class="pantalla" id="pantallaMenu" aria-labelledby="tituloMenu">
+    <header class="encabezado-pagina">
+      <div class="barra-superior"><button class="boton boton-volver" type="button" data-screen="pantallaInicio">← Inicio</button><span class="marca-mini">CECYCAFETERÍA</span><button class="carrito-mini" type="button" data-screen="pantallaPedido" aria-label="Ver mi pedido">🛒 <span id="contadorMenu">0</span></button></div>
+      <p class="sobrelinea">FRESCO Y DELICIOSO</p>
+      <h1 id="tituloMenu">Nuestro menú</h1>
+      <p>Elige tus favoritos y arma tu pedido.</p>
+    </header>
+    <main class="contenedor">
+      <div class="menu-grid">
+        <article class="producto">
+          <div class="producto-imagen"><img src="img/hamburguesa.jpg" alt="Hamburguesa"></div>
+          <div class="producto-cuerpo"><div class="producto-titulo"><h2>Hamburguesa</h2><span class="precio">$35</span></div><p>Clásica, rica y perfecta para el recreo.</p><button class="boton boton-principal boton-ancho" type="button" data-product="hamburguesa">Agregar al pedido <span>＋</span></button></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen"><img src="img/torta.jpg" alt="Torta"></div>
+          <div class="producto-cuerpo"><div class="producto-titulo"><h2>Torta</h2><span class="precio">$30</span></div><p>Una torta llenadora para recargar energía.</p><button class="boton boton-principal boton-ancho" type="button" data-product="torta">Agregar al pedido <span>＋</span></button></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen"><img src="img/sandwich.jpg" alt="Sándwich"></div>
+          <div class="producto-cuerpo"><div class="producto-titulo"><h2>Sándwich</h2><span class="precio">$25</span></div><p>Fresco, práctico y listo para disfrutar.</p><button class="boton boton-principal boton-ancho" type="button" data-product="sandwich">Agregar al pedido <span>＋</span></button></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen"><img src="img/pizza.jpg" alt="Pizza"></div>
+          <div class="producto-cuerpo"><div class="producto-titulo"><h2>Pizza</h2><span class="precio">$30</span></div><p>Una porción calientita para alegrar tu día.</p><button class="boton boton-principal boton-ancho" type="button" data-product="pizza">Agregar al pedido <span>＋</span></button></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen"><img src="img/agua.jpg" alt="Agua"></div>
+          <div class="producto-cuerpo"><div class="producto-titulo"><h2>Agua</h2><span class="precio">$15</span></div><p>Hidrátate y sigue con toda la actitud.</p><button class="boton boton-principal boton-ancho" type="button" data-product="agua">Agregar al pedido <span>＋</span></button></div>
+        </article>
+        <article class="producto">
+          <div class="producto-imagen"><img src="img/refresco.jpg" alt="Refresco"></div>
+          <div class="producto-cuerpo"><div class="producto-titulo"><h2>Refresco</h2><span class="precio">$10</span></div><p>Una bebida fría para acompañar tu comida.</p><button class="boton boton-principal boton-ancho" type="button" data-product="refresco">Agregar al pedido <span>＋</span></button></div>
+        </article>
+      </div>
+      <div class="pie-menu"><span>¿Ya elegiste? Revisa tu pedido cuando quieras.</span><button class="boton boton-oscuro" type="button" data-screen="pantallaPedido">Ver mi pedido <span id="contadorPie">0</span> →</button></div>
+    </main>
+  </section>
+
+  <section class="pantalla" id="pantallaPedido" aria-labelledby="tituloPedido">
+    <header class="encabezado-pagina encabezado-compacto">
+      <div class="barra-superior"><button class="boton boton-volver" type="button" data-screen="pantallaMenu">← Menú</button><span class="marca-mini">CECYCAFETERÍA</span><button class="carrito-mini" type="button" data-screen="pantallaPedido" aria-label="Mi pedido">🛒 <span id="contadorPedido">0</span></button></div>
+      <p class="sobrelinea">CASI LISTO</p><h1 id="tituloPedido">Mi pedido</h1><p>Revisa las cantidades antes de confirmar.</p>
+    </header>
+    <main class="contenedor ancho-pedido">
+      <div class="panel-pedido">
+        <div id="listaPedido" class="lista-pedido" aria-live="polite"></div>
+        <div class="resumen-total"><span>Total a pagar</span><strong id="total">$0</strong></div>
+        <button class="boton boton-principal boton-ancho boton-confirmar" id="botonConfirmar" type="button" data-action="confirm">Confirmar pedido <span>→</span></button>
+        <p class="nota-pago">El pago se registra como pagado para esta demostración.</p>
+      </div>
+      <button class="boton boton-texto regreso" type="button" data-screen="pantallaMenu">＋ Agregar más productos</button>
+    </main>
+  </section>
+
+  <section class="pantalla" id="pantallaConfirmacion" aria-labelledby="tituloPreparando">
+    <main class="contenedor estado-contenido">
+      <div class="estado-icono" id="iconoPedido" aria-hidden="true">👩‍🍳</div>
+      <p class="sobrelinea">PEDIDO <span id="numeroPedido">001</span></p>
+      <h1 id="tituloPreparando">Preparando pedido</h1>
+      <p class="texto-suave" id="textoEstado">Estamos preparando tus productos. ¡En un momento estarán listos!</p>
+      <div class="barra-progreso" role="progressbar" aria-label="Progreso de preparación" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progresoPedido"></span></div>
+      <p class="resumen-preparacion" id="resumenPedidoFinal"></p>
+      <div class="resumen-total estado-total"><span>Total pagado</span><strong id="totalFinal">$0</strong></div>
+      <button class="boton boton-principal boton-ancho" id="botonContinuarTicket" type="button" data-action="ticket" disabled>Preparando…</button>
+      <button class="boton boton-texto" type="button" data-screen="pantallaInicio">Volver al inicio</button>
+    </main>
+  </section>
+
+  <section class="pantalla" id="pantallaTicket" aria-labelledby="tituloTicket">
+    <main class="contenedor ticket-contenedor">
+      <article class="ticket">
+        <div class="ticket-cabecera"><div class="ticket-logo">☕</div><p class="sobrelinea">CECYCAFETERÍA ESCOLAR</p><h1 id="tituloTicket">¡Pedido entregado!</h1><p>Gracias por elegirnos 💚</p></div>
+        <div class="ticket-meta"><div><span>Número</span><strong id="numeroTicket">—</strong></div><div><span>Fecha</span><strong id="fechaTicket">—</strong></div><div><span>Hora</span><strong id="horaTicket">—</strong></div></div>
+        <div class="ticket-columnas"><span>Producto</span><span>Importe</span></div>
+        <div id="productosTicket" class="ticket-productos"></div>
+        <div class="ticket-total"><span>Total</span><strong id="totalTicket">$0</strong></div>
+        <div class="estado-pago" id="pagoTicket">PAGADO</div>
+        <p class="ticket-pie">¡Que disfrutes tu recreo!</p>
+        <button class="boton boton-principal boton-ancho" type="button" data-action="finish">Finalizar y volver al inicio</button>
+      </article>
+    </main>
+  </section>
+
+  <section class="pantalla" id="pantallaPedidos" aria-labelledby="tituloPedidos">
+    <header class="encabezado-pagina encabezado-compacto">
+      <div class="barra-superior"><button class="boton boton-volver" type="button" data-screen="pantallaInicio">← Inicio</button><span class="marca-mini">CECYCAFETERÍA</span><span class="espacio-mini"></span></div>
+      <p class="sobrelinea">TUS COMPRAS</p><h1 id="tituloPedidos">Mis pedidos</h1><p>El estado de tus pedidos recientes.</p>
+    </header>
+    <main class="contenedor ancho-pedido"><div id="listaPedidos" class="lista-ordenes"></div></main>
+  </section>
+
+  <section class="pantalla" id="pantallaHistorial" aria-labelledby="tituloHistorial">
+    <header class="encabezado-pagina encabezado-compacto">
+      <div class="barra-superior"><button class="boton boton-volver" type="button" data-screen="pantallaInicio">← Inicio</button><span class="marca-mini">CECYCAFETERÍA</span><span class="espacio-mini"></span></div>
+      <p class="sobrelinea">TODO EN UN SOLO LUGAR</p><h1 id="tituloHistorial">Historial</h1><p>Consulta los detalles de tus pedidos anteriores.</p>
+    </header>
+    <main class="contenedor ancho-pedido"><div id="listaHistorial" class="lista-ordenes"></div></main>
+  </section>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+</body>
+</html>
